@@ -5,13 +5,27 @@ import java.util.Scanner;
 public class IntegerToNumeral {
     private final Scanner sc = new Scanner(System.in);
 
-    public boolean validInt(int input) {
-        return (input >= 1 && input <= 3000);
+    public boolean validInt(int number) {
+        return (number >= 1 && number <= 3000);
     }
 
-    public static String converter(int num) {
-        String[] singleDigit = {"", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"};
+    public static String converter(int number) {
+        StringBuilder romanNumeral = new StringBuilder();
 
-        return singleDigit[num % 10];
+        int[] intValues = {1000, 900, 500, 400, 100, 90, 50, 40,
+                10, 9, 5, 4, 1};
+        String[] numerals = {"M", "CM", "D", "CD", "C", "XC",
+                "L", "XL", "X", "IX", "V", "IV", "I"};
+        int i = 0;
+
+        while (number > 0) {
+            if (number >= intValues[i]) {
+                romanNumeral.append(numerals[i]);
+                number -= intValues[i];
+            } else {
+                i++;
+            }
+        }
+        return romanNumeral.toString();
     }
 }

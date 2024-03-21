@@ -22,7 +22,7 @@ public class NumeralTests {
     }
     @Test
     public void quadDigitTest(){
-        String numeral = IntegerToNumeral.converter(999);
+        String numeral = IntegerToNumeral.converter(3000);
         Assertions.assertEquals("MMM", numeral);
     }
 }
