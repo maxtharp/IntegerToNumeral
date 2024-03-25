@@ -1,7 +1,5 @@
 package model;
 
-import java.util.Scanner;
-
 public class IntegerToNumeral {
 
     public boolean validInt(int number) {
