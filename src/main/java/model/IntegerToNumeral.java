@@ -3,7 +3,6 @@ package model;
 import java.util.Scanner;
 
 public class IntegerToNumeral {
-    private final Scanner sc = new Scanner(System.in);
 
     public boolean validInt(int number) {
         return (number >= 1 && number <= 3000);
